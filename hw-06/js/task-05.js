@@ -1,8 +1,7 @@
 // task-05
   // Получить пользоваля (не массив) по email (поле email, он уникальный).
 
-import * as arr from "./users.js"
-const users = arr.default;
+import users from "./users.js";
 
 
 const getUserWithEmail = (users, email) => {

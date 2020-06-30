@@ -1,8 +1,7 @@
 // task-03
 // Получить массив имен пользователей по полу (поле gender).
 
-import * as arr from "./users.js";
-const users = arr.default;
+import users from "./users.js";
 
 const getUsersWithGender = (users, gender) => {
   return users.filter(user => user.gender === gender);

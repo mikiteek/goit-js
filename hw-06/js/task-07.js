@@ -1,8 +1,7 @@
 // task-07
 // Получить общую сумму баланса (поле balance) всех пользователей.
 
-import * as arr from "./users.js"
-const users = arr.default;
+import users from "./users.js";
 
 const calculateTotalBalance = users => {
   return users.reduce((acc, user) => acc + user.balance, 0);

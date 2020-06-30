@@ -1,7 +1,6 @@
 // task-01
 // Получить массив имен всех пользователей (поле name).
-import * as arr from "./users.js";
-const users = arr.default;
+import users from "./users.js";
 
 const getUserNames = (users) => {
   return users.map(user => user.name);

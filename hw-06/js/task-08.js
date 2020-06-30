@@ -1,8 +1,7 @@
 // task-08
 // Массив имен всех пользователей у которых есть друг с указанным именем.
 
-import * as arr from "./users.js"
-const users = arr.default;
+import users from "./users.js";
 
 const getUsersWithFriend = (users, friendName) => {
   return users

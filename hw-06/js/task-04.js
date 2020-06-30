@@ -1,8 +1,7 @@
 // task-04
 // Получить массив только неактивных пользователей (поле isActive).
 
-import * as arr from "./users.js"
-const users = arr.default;
+import users from "./users.js";
 
 const getInactiveUsers = users => users.filter(user => user.isActive === false);
 

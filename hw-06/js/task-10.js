@@ -3,8 +3,7 @@
 // при этом не должно быть повторяющихся умений и они должны быть
 // отсортированы в алфавитном порядке.
 
-import * as arr from "./users.js"
-const users = arr.default;
+import users from "./users.js";
 
 const getSortedUniqueSkills = users => {
   let arr = [];

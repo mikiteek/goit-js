@@ -2,8 +2,7 @@
 // Массив имен (поле name) людей, отсортированных в зависимости
 // от количества их друзей (поле friends)
 
-import * as arr from "./users.js"
-const users = arr.default;
+import users from "./users.js";
 
 const getNamesSortedByFriendsCount = users => {
   return users
