@@ -13,13 +13,16 @@ const ingredients = [
 // создаст отдельный li, после чего вставит все li за одну операцию
 // в список ul.ingredients. Для создания DOM-узлов
 // используй document.createElement().
-const liRef = document.createElement("li");
+
 const ingredientsRef = document.querySelector("#ingredients");
-let tmp;
-ingredients.forEach(item => {
-  tmp = liRef.cloneNode(true);
-  tmp.textContent = item;
-  ingredientsRef.append(tmp);
-})
+
+const createItemIngredient = (ingredient) => {
+  const liRef = document.createElement("li");
+  liRef.textContent = ingredient;
+  return liRef;
+}
+
+const liRefArr = ingredients.map(item => createItemIngredient(item));
+ingredientsRef.append(...liRefArr);
 
 console.log(ingredientsRef);

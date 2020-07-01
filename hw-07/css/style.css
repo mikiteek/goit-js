@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.display-flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.valid,
+.invalid {
+  border: 2px solid rgb(142, 147, 142);
+  border-radius: 2px;
+}
+
+.valid {
+  border-bottom: solid 2px rgb(0, 128, 0);
+}
+.invalid {
+  border-bottom: solid 2px rgb(128, 0, 0);
+}
