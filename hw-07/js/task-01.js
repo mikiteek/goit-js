@@ -13,7 +13,7 @@
     // Количество элементов: 4
 
 const liItemRef = document.querySelectorAll(".item");
-console.log(liItemRef.length);
+console.log(`Categories - ${liItemRef.length}`);
 
 liItemRef.forEach(item =>
   console.log(`
