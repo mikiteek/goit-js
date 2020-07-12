@@ -1,0 +1,12 @@
+a {
+  display: block;
+  height: 100%;
+}
+li {
+  list-style: none;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+}
