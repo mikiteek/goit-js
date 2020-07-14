@@ -7,11 +7,15 @@ const refs = {
   modal: document.querySelector(".lightbox"),
   backDrop: document.querySelector(".lightbox__content"),
   closeBtn: document.querySelector("button[data-action='close-lightbox']"),
-  lagreImg: document.querySelector(".lightbox__image"),
+  largeImg: document.querySelector(".lightbox__image"),
+  leftBtn: document.querySelector(".icon-button__left"),
+  rightBtn: document.querySelector(".icon-button__right")
 }
 refs.gallery.addEventListener("click", onGalleryClick);
 refs.backDrop.addEventListener("click", onBackDropClick);
 refs.closeBtn.addEventListener("click", onCloseModal);
+refs.rightBtn.addEventListener("click", flipRight);
+refs.leftBtn.addEventListener("click", flipLeft);
 
 let indexImg = 0;
 function createLiItem(itemInfo) {
@@ -54,17 +58,19 @@ function onOpenModal() {
 }
 function onCloseModal() {
   window.removeEventListener("keydown", onPressEscape);
+  window.removeEventListener("keydown", onPressKeyRight);
+  window.removeEventListener("keydown", onPressKeyLeft);
   refs.modal.classList.remove("is-open");
   clearImageAttr();
 }
 function setLargeImage(imageRef) {
-  refs.lagreImg.src = imageRef.dataset.source;
-  refs.lagreImg.alt = imageRef.alt;
-  refs.lagreImg.dataset.value = imageRef.dataset.value;
+  refs.largeImg.src = imageRef.dataset.source;
+  refs.largeImg.alt = imageRef.alt;
+  refs.largeImg.dataset.value = imageRef.dataset.value;
 }
 function clearImageAttr() {
-  refs.lagreImg.src = "";
-  refs.lagreImg.alt = "";
+  refs.largeImg.src = "";
+  refs.largeImg.alt = "";
 }
 function onPressKeyRight(event) {
   if (event.code === "ArrowRight")
@@ -75,18 +81,18 @@ function onPressKeyLeft(event) {
     flipLeft();
 }
 function flipRight() {
-  const index = +refs.lagreImg.dataset.value;
+  const index = +refs.largeImg.dataset.value;
   if (index === photos.length - 1)
     return;
   flipSetImgAttribute(1, index);
 }
 function flipSetImgAttribute(step, currentIndex) {
-  refs.lagreImg.src = photos[currentIndex + step].original;
-  refs.lagreImg.alt = photos[currentIndex + step].description;
-  refs.lagreImg.dataset.value = `${currentIndex + step}`;
+  refs.largeImg.src = photos[currentIndex + step].original;
+  refs.largeImg.alt = photos[currentIndex + step].description;
+  refs.largeImg.dataset.value = `${currentIndex + step}`;
 }
 function flipLeft() {
-  const index = +refs.lagreImg.dataset.value;
+  const index = +refs.largeImg.dataset.value;
   if (index === 0)
     return;
   flipSetImgAttribute(-1, index);
