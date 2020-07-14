@@ -1,21 +1,26 @@
 // task-01
-// Создай галерею с возможностью клика по ее элементам и просмотра
-// полноразмерного изображения в модальном окне.
+// https://github.com/goitacademy/javascript-homework/tree/master/homework-08
 
-//Разбей задание на несколько подзадач:
-//
-  // Создание и рендер разметки по массиву данных и предоставленному шаблону.
-  // Реализация делегирования на галерее ul.js-gallery и получение url большого изображения.
-  // Открытие модального окна по клику на элементе галереи.
-  // Подмена значения атрибута src элемента img.lightbox__image.
-  // Закрытие модального окна по клику на кнопку button[data-action="close-modal"].
-  // Очистка значения атрибута src элемента img.lightbox__image. Это необходимо для того,
-  // чтобы при следующем открытии модального окна, пока грузится изображение,
-  // мы не видели предыдущее.
+import photos from "./gallery-items.js"
+const refs = {
+  ul: document.querySelector(".js-gallery"),
+}
 
-// Стартовые файлы
-  // В папке src ты найдешь стартовые файлы проекта с базовой разметкой и готовыми стилями.
-  // В файле gallery-items.js есть массив объектов содержащих информацию о изображениях:
-  // маленькое изображение, оригинальное и описание.
+let index = 0;
 
+function createLiItem(itemInfo) {
+  const li = document.createElement("li");
+  li.classList.add("gallery__item");
+  li.innerHTML = `<a class="gallery__link" href="${itemInfo.original}">
+                    <img class="gallery__image" src="${itemInfo.preview}" 
+                      data-source="${itemInfo.original}"
+                      data-value="${index++}"
+                      alt="${itemInfo.description}"
+                      width="340"/>                    
+                  </a>`
+  return li;
+}
 
+const liArrRef = photos.map(img => createLiItem(img));
+
+refs.ul.append(...liArrRef);
