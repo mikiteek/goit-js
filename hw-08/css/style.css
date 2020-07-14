@@ -133,6 +133,7 @@ body {
   background-size: 60%;
   background-repeat: no-repeat;
 }
+/* Технический долг - отцентрировать иконку кнопку влево и вправо*/
 .icon-svg {
   fill: white;
   width: 100%;
