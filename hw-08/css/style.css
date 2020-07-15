@@ -135,13 +135,10 @@ body {
 }
 /* Технический долг - отцентрировать иконку кнопку влево и вправо*/
 .icon-svg {
+  padding-top: 8px;
   fill: white;
   width: 100%;
   height: 100%;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .icon-button {
   outline: none;
