@@ -1,0 +1,25 @@
+{
+  "name": "mod-09__nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "build": "babel src -d dist"
+  },
+  "keywords": [],
+  "author": "Sergey Mikiteek <mikiteek@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash.throttle": "^4.1.1",
+    "validator": "^13.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "imagemin": "^7.0.1"
+  }
+}
