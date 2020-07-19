@@ -23,7 +23,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({filename: "styles.css"}),
+    new MiniCssExtractPlugin({filename: "styles.scss"}),
     new HtmlWebpackPlugin({template: "./src/index.html"})],
   devServer: {
     port: 1234,
