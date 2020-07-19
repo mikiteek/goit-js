@@ -13,8 +13,14 @@ const ADMIN_PASSWORD = "thispassword";
 let message;
 let pass = prompt("Enter password: ");
 
-if (pass === "") message = "Canceled by user";
-else if (pass === ADMIN_PASSWORD) message = "Welcome";
-else message = "Access denied, invalid password";
+if (pass === null) {
+  message = "Canceled by user";
+}
+else if (pass === ADMIN_PASSWORD) {
+  message = "Welcome";
+}
+else {
+  message = "Access denied, invalid password";
+}
 
 alert(message);

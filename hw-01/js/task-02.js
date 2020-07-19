@@ -11,6 +11,8 @@
 const total = 100;
 const ordered = 80;
 
-if (ordered <= total)
+if (ordered <= total) {
   console.log("The order is placed, the manager will contact you");
-else console.log("There are not enough goods in the warehouse!");
+} else {
+  console.log("There are not enough goods in the warehouse!");
+}

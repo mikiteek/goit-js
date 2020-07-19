@@ -20,13 +20,21 @@ let credits = 23580;
 const pricePerDroid = 3000;
 let totalPrice;
 
-const count = prompt("Enter number of droids");
+let count = +prompt("Enter number of droids");
+while (isNaN(count)) {
+  count = +prompt("Is not number, please enter number again");
+}
 
-if (count === "") console.log("Canceled by user");
-else totalPrice = count * pricePerDroid;
+if (count === null) {
+  console.log("Canceled by user");
+}
+else {
+  totalPrice = count * pricePerDroid;
+}
 
-if (totalPrice > credits)
+if (totalPrice > credits) {
   console.log("You do not have enough funds in your account");
+}
 else
   console.log(
     `You bought ${count} droids, and ${

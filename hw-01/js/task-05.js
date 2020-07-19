@@ -37,6 +37,9 @@ switch (country.toLowerCase()) {
   default:
     priceDelivery = -1;
 }
-if (priceDelivery !== -1)
+if (priceDelivery !== -1) {
   alert(`Delivey in ${country} will be ${priceDelivery}`);
-else alert("Delivery is not available in your country.");
+}
+else {
+  alert("Delivery is not available in your country.");
+}
