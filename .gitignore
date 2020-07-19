@@ -1,6 +1,8 @@
 
 # Created by https://www.toptal.com/developers/gitignore/api/webstorm,visualstudiocode,node,sass,linux,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=webstorm,visualstudiocode,node,sass,linux,windows
+### Build ###
+/**/build
 
 ### Linux ###
 *~
@@ -268,4 +270,3 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/webstorm,visualstudiocode,node,sass,linux,windows
