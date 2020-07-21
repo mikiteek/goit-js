@@ -45,20 +45,21 @@ const isLoginValid = (login) => {
 };
 
 const isLoginUnique = (allLogins, login) => {
-  return allLogins.includes(login);
+  return !allLogins.includes(login);
 };
 
 const addLogin = (allLogins, login) => {
   if (!isLoginValid(login)) {
     return "Error, login must be between 4 and 16 characters!";
   }
-  if (isLoginUnique(allLogins, login)) {
+  if (!isLoginUnique(allLogins, login)) {
     return "This login already exist!";
   }
   logins.push(login);
   return "Login has added successfully!";
 };
-
+console.log(addLogin(logins, 'Ajax')); //Login has added successfully!
 console.log(addLogin(logins, "robotGoogles")); //This login already exist!
 console.log(addLogin(logins, "Neo")); //Error, login must be between 4 and 16 characters
 console.log(addLogin(logins, "abrakadabra")); //Login has added successfully!
+console.log(addLogin(logins, 'jqueryisextremelyfast')); //Error, login must be between 4 and 16 characters

@@ -30,9 +30,12 @@ while (input !== null) {
 }
 numbers.pop();
 
-if (numbers) {
+if (numbers.length) {
   for (let num of numbers) {
     total += num;
   }
+  console.log(`Total sum of all numbers is ${total}`);
 }
-console.log(`Total sum of all numbers is ${total}`);
+else {
+  console.log("Nothing entered");
+}

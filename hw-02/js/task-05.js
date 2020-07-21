@@ -6,8 +6,8 @@
 // произвольном регистре.
 const checkForSpam = (message) => {
   return (
-    message.toLowerCase().includes("spam") === true ||
-    message.toLowerCase().includes("sale") === true
+    message.toLowerCase().includes("spam") ||
+    message.toLowerCase().includes("sale")
   );
 };
 console.log(checkForSpam("Latest technology news")); // false
