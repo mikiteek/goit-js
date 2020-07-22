@@ -1,5 +1,6 @@
 import "./js/modal";
 import "./js/carousel";
+import "./js/notifications";
 import "./sass/styles.scss";
 
 // why does not work - Repeta
