@@ -12,7 +12,7 @@ const products = [
 const getAllPropValues = (arr, prop) => {
   let res = [];
   for (const item of arr) {
-    if (item[prop])
+    if (item[prop] !== undefined)
       res.push(item[prop]);
   }
   return res;

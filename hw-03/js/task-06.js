@@ -15,7 +15,7 @@ const calculateTotalPrice = (allProdcuts, productName) => {
   const res = allProdcuts.find((item) => {
     return item.name === productName;
   });
-  return res.price * res.quantity;
+  return res? res.price * res.quantity : null; // проверяем нашло ли что-то нам сначала
   // for (const item of allProdcuts) {
   //   if (item.name === productName) {
   //     return item.price * item.quantity;
