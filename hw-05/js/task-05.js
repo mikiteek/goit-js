@@ -18,7 +18,7 @@
       return this._price;
     }
     set price(value) {
-      return this._price = value;
+      this._price = value;
     }
 
     turnOn() {
@@ -31,12 +31,12 @@
     }
 
     accelerate(value) {
-      if (this.speed <= this.maxSpeed)
+      if (this.speed + value <= this.maxSpeed)
         this.speed += value;
     }
 
     decelerate(value) {
-      if (this.speed)
+      if (this.speed - value > 0)
         this.speed -= value;
     }
 
