@@ -36,7 +36,7 @@
     }
 
     decelerate(value) {
-      if (this.speed - value > 0)
+      if (this.speed - value >= 0)
         this.speed -= value;
     }
 
