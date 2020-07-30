@@ -1,15 +1,61 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+li {
+  list-style: initial;
+}
+.country {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.country__title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.country-block {
+  display: flex;
+}
+.country__info {
+  margin-right: 40px;
+}
+.info-item {
+  font-size: 24px;
+}
+.country__capital,
+.country__population {
+  margin-bottom: 20px;
+}
+.country__languages--title {
+  margin-bottom: 15px;
+}
+.country__info--item {
+  font-weight: 600;
+}
+.country__languages {
+  position: relative;
+}
+.country__languages--block {
+  position: absolute;
+  left: 30px;
 }
