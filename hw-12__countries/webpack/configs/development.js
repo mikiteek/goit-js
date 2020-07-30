@@ -10,11 +10,11 @@ module.exports = env => ({
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: ['style-loader', 'sass-loader', 'postcss-loader'],
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: ['style-loader', 'sass-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },

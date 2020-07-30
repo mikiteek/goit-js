@@ -1,30 +1,8 @@
-html {
-  box-sizing: border-box;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.2;
-}
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-li {
-  list-style: initial;
+.countries {
+  margin-left: 50px;
 }
 .country {
   width: 50%;
-  margin-right: auto;
-  margin-left: auto;
 }
 .country__title {
   text-align: center;
@@ -39,7 +17,8 @@ li {
 .country__info {
   margin-right: 40px;
 }
-.info-item {
+.info-item,
+.country__languages--item {
   font-size: 24px;
 }
 .country__capital,

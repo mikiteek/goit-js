@@ -24,13 +24,13 @@ module.exports = env => ({
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [MiniCssExtractPlugin.loader, 'sass-loader', 'postcss-loader'],
       },
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          'sass-loader',
           'postcss-loader',
           'sass-loader',
         ],
@@ -50,8 +50,8 @@ module.exports = env => ({
       },
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-      chunkFilename: '[name].[id].[contenthash].css',
+      filename: '[name].[contenthash].sass',
+      chunkFilename: '[name].[id].[contenthash].sass',
     }),
     new OptimizeCssAssetsPlugin({}),
   ],

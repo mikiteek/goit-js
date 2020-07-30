@@ -1,26 +1,33 @@
+import countryTemplate from "./template/country.hbs";
+import countriesTemplate from "./template/countries.hbs";
 import fetchCountries from "./js/fetchQuery";
+import markupTemplate from "./js/markup";
+import notifier from './js/notify';
 import refs from "./js/refs"
 const debounce = require("lodash.debounce");
-import './css/styles.css';
-import countryTemplate from "./template/country.hbs";
+import './sass/styles.scss';
 
 const debouncedInputQuery = debounce(event => {
   const query = event.target.value;
-  fetchCountries(query)
-    .then(countries => {
-      if (countries.length > 10) {
-        console.log("Input more information");
-      }
-      else if (countries.length == 1) {
-        const markup = countryTemplate(...countries);
-        refs.ul.insertAdjacentHTML("beforeend", markup);
-        // console.log(...countries);
-      }
-      else {
-        const countryNames = countries.map(country => country.name);
-        console.log(countryNames);
-      }
-    });
+  if (query !== "") {
+    fetchCountries(query)
+      .then(countries => {
+        if (countries.length > 10) {
+          refs.ul.innerHTML = "";
+          notifier.warning("too many matches found, please enter a better query");
+        }
+        else if (countries.length == 1) {
+          markupTemplate(countryTemplate, countries);
+        }
+        else {
+          markupTemplate(countriesTemplate, countries);
+        }
+      });
+  }
+  else {
+    refs.ul.innerHTML = "";
+  }
 }, 500);
 refs.search.addEventListener("input", debouncedInputQuery);
+
 

@@ -1,0 +1,8 @@
+@import "notify-awesome/variables";
+@import "notify-awesome/animations";
+@import "notify-awesome/popups";
+@import "notify-awesome/toasts";
+
+[class^="awn-"] {
+  box-sizing: border-box;
+}
