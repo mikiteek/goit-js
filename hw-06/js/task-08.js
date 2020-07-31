@@ -5,7 +5,7 @@ import users from "./users.js";
 
 const getUsersWithFriend = (users, friendName) => {
   return users
-    .filter(user => user.friends.find(name => name === friendName))// можно !== undefined после первой скобки прописать ) !== underfined)
+    .filter(user => user.friends.includes(friendName))
     .map(user => user.name);
 };
 
