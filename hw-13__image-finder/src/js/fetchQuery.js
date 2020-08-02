@@ -27,5 +27,8 @@ export default {
   set query(value) {
     this.searchQuery = value;
   },
+  getUrl() {
+    return `${searchOpt.BASE_URL}?image_type=${searchOpt.IMAGE_TYPE}&orientation=${searchOpt.ORIENTATION}&q=${this.query}&page=${this.page}&per_page=${searchOpt.PER_PAGE}&key=${searchOpt.API_KEY}`;
+  }
 };
 
