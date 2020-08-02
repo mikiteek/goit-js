@@ -2,6 +2,7 @@ import './sass/styles.scss';
 import fetchQuery from './js/fetchQuery';
 import refs from "./js/refs"
 // import LoadMoreBtn from "./js/components/load-more-btn";
+import handleSpinner from "./js/components/spinner";
 const throttle = require("lodash.throttle");
 import updateImagesMarkup from "./js/update-images-markup"
 
@@ -26,14 +27,16 @@ function searchFormSubmitHandler(event) {
   form.reset();
 }
 function fetchImages() {
+  handleSpinner.showSpinner();
   // loadMoreBtn.disable();
   fetchQuery.fetchImages().then(images => {
-    console.log(images);
+    // console.log(images);
     updateImagesMarkup(images);
+    windowSchrollTo();
     // loadMoreBtn.show();
     // loadMoreBtn.enable();
-    windowSchrollTo();
   });
+  handleSpinner.hideSpinner();
 }
 function clearImages() {
   refs.imagesUl.innerHTML = '';
