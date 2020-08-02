@@ -11,8 +11,15 @@ const inputRef = document.querySelector("#validation-input");
 
 function inputValidation(event) {
   inputRef.getAttribute("data-length") !== event.target.value.length.toString()
-    ? inputRef.classList.add("invalid")
-    : inputRef.classList.add("valid");
+    ? addInValidModificator()
+    : addValidModificator();
 }
-
+function addValidModificator() {
+  inputRef.classList.add("valid");
+  inputRef.classList.remove("invalid")
+}
+function addInValidModificator() {
+  inputRef.classList.add("invalid");
+  inputRef.classList.remove("valid");
+}
 inputRef.addEventListener("blur", inputValidation);

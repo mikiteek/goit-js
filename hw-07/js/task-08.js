@@ -39,7 +39,7 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  divArrRef.forEach(item => item.remove());
+  divBoxesRef.innerHTML = "";
   divArrRef = [];
 }
 

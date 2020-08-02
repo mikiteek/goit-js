@@ -22,7 +22,8 @@ const createItemIngredient = (ingredient) => {
   return liRef;
 }
 
-const liRefArr = ingredients.map(item => createItemIngredient(item));
+// const liRefArr = ingredients.map(item => createItemIngredient(item));
+const liRefArr = ingredients.map(createItemIngredient); // выше тоже токо не сокращенно
 ingredientsRef.append(...liRefArr);
 
 console.log(ingredientsRef);
