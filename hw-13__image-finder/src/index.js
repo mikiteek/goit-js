@@ -5,6 +5,11 @@ import refs from "./js/refs"
 const throttle = require("lodash.throttle");
 import updateImagesMarkup from "./js/update-images-markup"
 
+// const loadMoreBtn = new LoadMoreBtn({
+//   selector: ".load-more",
+//   hidden: true,
+// });
+
 const throttleLoadMore = throttle(loadMore, 500);
 refs.searchForm.addEventListener('submit', searchFormSubmitHandler);
 window.addEventListener("scroll", throttleLoadMore);
@@ -27,6 +32,7 @@ function fetchImages() {
     updateImagesMarkup(images);
     // loadMoreBtn.show();
     // loadMoreBtn.enable();
+    windowSchrollTo();
   });
 }
 function clearImages() {
@@ -38,4 +44,10 @@ function loadMore() {
   if(window.pageYOffset + window.innerHeight >= images.offsetHeight) {
     fetchImages();
   }
+}
+function windowSchrollTo() {
+  window.scrollTo({
+    top: document.documentElement.offsetHeight - 320,
+    behavior: "smooth"
+  })
 }
