@@ -1,11 +1,10 @@
-import './sass/styles.scss';
 import fetchQuery from './js/fetchQuery';
 import refs from "./js/refs"
 // import LoadMoreBtn from "./js/components/load-more-btn";
 import handleSpinner from "./js/components/spinner";
 const throttle = require("lodash.throttle");
 import updateImagesMarkup from "./js/update-images-markup"
-
+import './sass/styles.scss';
 // const loadMoreBtn = new LoadMoreBtn({
 //   selector: ".load-more",
 //   hidden: true,
